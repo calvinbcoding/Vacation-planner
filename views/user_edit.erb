@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>Edit Your Info!</h2>
+	<form action="/users/<%=@user.id%>" method="POST">
+		<input type="hidden" name="_method" value="PUT" />
+		Username:
+		<input type="text" name="username" placeholder="Username" />
+		Password:
+		<input type="password" name="password" />
+		Image URL:
+		<input type="text" name="image" placeholder="Image URL" />
+		<button>Update User Info</button>
+	</form>
+	<form action="/users/<%=@user.id%>" method="POST">
+		<input type="hidden" name="_method" value="DELETE">
+		<button>Delete User</button>
+	</form>
+</body>
+</html>

@@ -2,8 +2,8 @@ require 'sinatra/base'
 
 require './controllers/ApplicationController'
 require './controllers/UserController'
-require './controllers/TripController'
-require './controllers/StopController'
+#require './controllers/TripController'
+#require './controllers/StopController'
 
 require './models/UserModel'
 require './models/TripModel'
@@ -16,9 +16,9 @@ map ('/') {
 map ('/users') {
 	run UserController
 }
-map ('/trips') {
-	run TripController
-}
-map ('/stops') {
-	run StopController
-}
+#map ('/trips') {
+#	run TripController
+#}
+#map ('/stops') {
+#	run StopController
+#}

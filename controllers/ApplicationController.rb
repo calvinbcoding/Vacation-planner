@@ -10,6 +10,11 @@ class ApplicationController < Sinatra::Base
     require 'bundler'
     Bundler.require()
 
+    require 'dotenv'
+    #  require './config/environments'
+    
+      enable :sessions
+
     
 
 
@@ -17,6 +22,9 @@ class ApplicationController < Sinatra::Base
         :adapter => 'postgresql',
         :database => 'vacation_planner'
     )
+    use Rack::MethodOverride
+    set :method_override, true
+
     set :views, File.expand_path('../../views', __FILE__)
 
     #teach it how to view static assets
@@ -24,7 +32,7 @@ class ApplicationController < Sinatra::Base
 
     
     get '/' do
-        "This is your Vacation Planner."
+        redirect '/users/login'
     end
 
     get '/test' do

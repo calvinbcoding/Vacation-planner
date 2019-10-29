@@ -16,7 +16,7 @@ CREATE TABLE trips(
 );
 
 CREATE TABLE stops(
-    id SERIEAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     name VARCHAR(256),
     address VARCHAR(512),
     lat_long VARCHAR(256)

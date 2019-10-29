@@ -42,8 +42,6 @@ class ApplicationController < Sinatra::Base
         "pry has finished -- here's sample_message #{sample_message}"
     end
 
-    get '/splashpage' do
-        erb :splashpage
-    end
+    
 
 end

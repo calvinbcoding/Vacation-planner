@@ -11,6 +11,12 @@ class ApplicationController < Sinatra::Base
     Bundler.require()
 
     
+
+
+    ActiveRecord::Base.establish_connection(
+        :adapter => 'postgresql',
+        :database => 'vacation_planner'
+    )
     set :views, File.expand_path('../../views', __FILE__)
 
     #teach it how to view static assets

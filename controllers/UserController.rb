@@ -36,7 +36,7 @@ class UserController < ApplicationController
                 success: true,
                 message: "#{user.username} has successfully logged in!"
             }
-            redirect "/users/#{session[:user_id]}"
+            redirect "/users/:id"
         else
             session[:message] = {
                 success: false,
@@ -53,7 +53,7 @@ class UserController < ApplicationController
             user = User.new
             user.username = params[:username]
             user.password = params[:password]
-            user.image = params[:image]
+            # user.image = params[:image]
             user.save
                 session[:logged_in] = true
                 session[:username] = user.username
@@ -62,7 +62,7 @@ class UserController < ApplicationController
                     success: true,
                     message: "#{user.username} has successfully logged in!"
             }
-            redirect "/users/#{session[:user_id]}"
+            redirect '/users/:id'
         else
             session[:message] = {
                 success: false,
@@ -79,13 +79,13 @@ class UserController < ApplicationController
         user = User.find params[:id]
         user.username = params[:username]
         user.password = params[:password]
-        user.image = params[:image_url]
+        # user.image = params[:image_url]
         user.save
             session[:message] = {
                 success: true,
                 message: "#{user.username}'s info has successfully updated"
             }
-            redirect "users/#{user.id}"
+            redirect 'users/:id'
     end
     
     #working but havent tried to display data yet
